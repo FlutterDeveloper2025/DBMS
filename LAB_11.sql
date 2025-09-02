@@ -196,8 +196,18 @@ EXEC PROC_DISPLAYQ2 'NEHA'
 SELECT * FROM DESIGNATION
 -- --------------------------------------------------------------------------------------------
 -- 4. Create Procedure which displays department wise maximum, minimum & total salaries.
-
+CREATE PROC MAX_MIN_TOTAL_SAL
+AS
+BEGIN 
+	SELECT DEPARTMENTID ,MAX(SALARY),MIN(SALARY),SUM(SALARY) AS 'TOTAL' FROM PERSON_DATA GROUP BY DEPARTMENTID
+END
 -- 5. Create Procedure which displays designation wise average & total salaries. 
+CREATE PROC AVG_TOTAL_SAL
+AS
+BEGIN 
+	SELECT DESIGNATIONID, AVG(SALARY),SUM(SALARY) AS 'TOTAL' FROM PERSON_DATA GROUP BY DESIGNATIONID
+END
+-- --------------------------------------------------------------------------------------------
 -- Part - C 
 -- 1. Create Procedure that Accepts Department Name and Returns Person Count. 
 -- 2. Create a procedure that takes a salary value as input and returns all workers with a salary greater than input 
@@ -207,3 +217,4 @@ SELECT * FROM DESIGNATION
 -- designation who joined within the last 10 years, along with their department. 
 -- 5. Create a procedure to list the number of workers in each department who do not have a designation assigned. 
 -- 6. Create a procedure to retrieve the details of workers in departments where the average salary is above 12000. 
+
