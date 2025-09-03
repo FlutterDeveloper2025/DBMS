@@ -210,11 +210,36 @@ END
 -- --------------------------------------------------------------------------------------------
 -- Part - C 
 -- 1. Create Procedure that Accepts Department Name and Returns Person Count. 
+CREATE PROC SP1
+@DEPT_NAME VARCHAR(100)
+AS
+BEGIN
+	SELECT COUNT(PERSON_ID) FROM PERSON_DATA P WHERE DEPARTMENTID = (SELECT DEPARTMENTID FROM DEPARTMENT_DATA D WHERE DEPARTMENTNAME =@DEPT_NAME)
+END
+EXEC SP1 'ADMIN'
+SELECT * FROM DEPARTMENT_DATA
 -- 2. Create a procedure that takes a salary value as input and returns all workers with a salary greater than input 
 -- salary value along with their department and designation details. 
+CREATE PROC SP2
+@SALARY DECIMAL(8,2)
+AS
+BEGIN
+	SELECT PER.*,DEPT.*,DES.* FROM PERSON_DATA PER 
+	JOIN DEPARTMENT_DATA DEPT ON PER.DEPARTMENTID = DEPT.DEPARTMENTID
+	JOIN DESIGNATION DES ON PER.DESIGNATIONID= DES.DESIGNATIONID
+	WHERE PER.SALARY > @SALARY
+END
+
+EXEC SP2 18000
+
 -- 3. Create a procedure to find the department(s) with the highest total salary among all departments. 
+CREATE PROC SP3
+AS
+BEGIN
+	SELECT DEPT.DEPARTMENTNAME,MAX(PER.SALARY) FROM PERSON_DATA PER JOIN DEPARTMENT_DATA DEPT ON PER.DEPARTMENTID = DEPT.DEPARTMENTID
+	GROUP BY DEPT.DEPARTMENTNAME
+END
 -- 4. Create a procedure that takes a designation name as input and returns a list of all workers under that 
 -- designation who joined within the last 10 years, along with their department. 
 -- 5. Create a procedure to list the number of workers in each department who do not have a designation assigned. 
 -- 6. Create a procedure to retrieve the details of workers in departments where the average salary is above 12000. 
-
