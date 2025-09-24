@@ -1,0 +1,54 @@
+# Part A: MongoDB Queries
+
+1. 	use Darshan
+2.	use DIET
+3.	show dbs
+4. 	db
+5.	db.dropDatabase()
+6.	db.createCollection("Student")
+7.	db.createCollection("Department")
+8.	show collections
+9.	db.Department.insertOne({Dname: "CE", HOD: "Patel"})
+10.	db.Department.insertMany([{Dname: "IT"}, {Dname: "ICT"}])
+11.	db.Department.drop()
+12.	db.Student.insertOne({
+    	Name: "Alice Johnson",
+    	City: "New York",
+    	Branch: "Computer Science",
+    	Semester: 3,
+    	Age: 20
+	})
+13. 	db.Student.insertMany([
+    	{
+        	Name: "Bob Smith",
+        	City: "Los Angeles",
+        	Branch: "Information Technology",
+        	Semester: 3,
+        	Age: 21
+    	},
+    	{
+        	Name: "Carol Davis",
+        	City: "Chicago",
+        	Branch: "Computer Engineering",
+        	Semester: 3,
+        	Age: 19
+    	},
+    	{
+        	Name: "David Wilson",
+        	City: "Houston",
+       		Branch: "Computer Science",
+        	Semester: 3,
+        	Age: 22
+    	}
+	])
+14.	db.getCollectionNames().includes("Student")
+15.	db.Student.stats()
+16.	db.Student.drop()
+17.	db.createCollection("Deposit")
+18.	-------------------------------
+19.	db.Deposit.find()
+20.	db.Deposit.drop()
+
+# Part B: MongoDB Queries
+1.	use Computer
+2.	db.createCollection("Faculty")
