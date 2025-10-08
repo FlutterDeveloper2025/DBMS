@@ -127,5 +127,10 @@
 --------------------------------------------------------
 --------------------------------------------------------
 -- PART C --
-[PENDING]
+1. db.Student.find({$and : {age : {$gt : 25}},{age : {$lt : 35}}}).sort(age : 1).forEach(printjson)
+2. db.Student.find().sort(name : 1,age : -1).forEach(printjson)
+3. db.Student.find().limit(5).forEach(printjson)
+4. db.Student.find().limit(2).skip(3).forEach(printjson)
+5. db.Student.find().sort(age : -1).limit(1).forEach(printjson)
+6. db.Student.find().skip(2).forEach(printjson)
 --------------------------------------------------------
