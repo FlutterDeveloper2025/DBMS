@@ -34,4 +34,23 @@
 ------------------------------------------------------------------------------------------------------------------------
 -- PART - B --
 ------------------------------------------------------------------------------------------------------------------------
-1. 
+* create and insert query pending [to be done]
+1. db["Student_data"].find({$and : {gender : "Female"},{city : "Rajkot"}})
+2. db["Student_data"].find({sem : {$ne : 3}}).forEach(printjson)
+3. db["Student_data"].find({city : {$in : ["Jamnagar","Baroda"]}}).forEach(printjson)
+4. db["Student_data"].find({city : "Baroda"}).limit(2).forEach(printjson)
+5. db["Student_data"].find({$and : {gender : "Male"},{sem : 3}}).forEach(printjson)
+6. db["Student_data"].find({rollno : {$lt : 105}},{sname : 1,city: 1,fees : 1,_id : 0}).forEach(printjson)
+7. db["Student_data"].updateMany({$and : {city : "Jamnagar"},{department : "CE"}},{$set : {city : "Surat"}})
+8. db["Student_data"].updateMany({$not : {gender : "Female"}},{$set : {$inc : {fees : 500}}})
+9. db["Student_data"].updateMany({$and : {department : "EE"},{sem : 3}},{$set : {department : "Electrical"}})
+10. db["Student_data"].updateMany({$and : {city : "Rajkot"},{gender : "Male"}},{$set : {fees : 20000}})
+11. db["Student_data"].updateMany({$and : {sem : 5},{fees : {$lt : 10000}}},{$set : {city : "Vadodara"}})
+12. db["Student_data"].deleteMany({$or : {city : "Ahmedabad"},{gender : "Male"}})
+13. db["Student_data"].deleteMany({rollno : {$nin : [101, 105, 110]}})
+14. db["Student_data"].deleteMany({$and : {department : "Civil"},{$or : {sem : 5},{sem : 7}}})
+15. db["Student_data"].deleteMany({city : {$nin : ["Rajkot","Baroda","Jamnagar"]}})
+16. db["Student_data"].deleteMany({$and : {rollno : {$gt : 105}},{rollno : {$lt : 108}}})
+17. db["Student_data"].updateMany({},{$rename : {city : "LOCATION"}})
+18. db["Student_data"].updateMany({fees : {$lt : 10000}},{$rename : {department : "Branch"}})
+19. Pending
