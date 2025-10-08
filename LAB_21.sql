@@ -53,4 +53,7 @@
 16. db["Student_data"].deleteMany({$and : {rollno : {$gt : 105}},{rollno : {$lt : 108}}})
 17. db["Student_data"].updateMany({},{$rename : {city : "LOCATION"}})
 18. db["Student_data"].updateMany({fees : {$lt : 10000}},{$rename : {department : "Branch"}})
-19. Pending
+19. -- Rename Sname to Fullname for students with Rollno in [106, 107, 108].
+20. -- Rename Fees to Tuition_Fees for all students with Fees greater than 9000.
+21. -- Rename Department to Major where the Fees is less than 15000 and Gender is 'Female'.
+22. -- Rename City to Hometown for all students whose SEM is 3 and Department is not 'Mechanical'.
