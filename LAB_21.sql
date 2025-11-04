@@ -34,7 +34,100 @@
 ------------------------------------------------------------------------------------------------------------------------
 -- PART - B --
 ------------------------------------------------------------------------------------------------------------------------
-* create and insert query pending [to be done]
+* db.Student_data.insertMany([
+    	{
+        	Rollno: 101,
+        	Sname: "Vina",
+        	Department: "CE",
+        	fees: 15000,
+        	Sem: 3,
+          gender : "Female",
+          City : "Rajkot"
+    	},
+      {
+        	Rollno: 102,
+        	Sname: "Krisha",
+        	Department: "EC",
+        	fees: 8000,
+        	Sem: 5,
+          gender : "Female",
+          City : "Ahmedabad"
+    	},
+      {
+        	Rollno: 103,
+        	Sname: "Priti",
+        	Department: "Civil",
+        	fees: 12000,
+        	Sem: 7,
+          gender : "Female",
+          City : "Baroda"
+    	},
+      {
+        	Rollno: 104,
+        	Sname: "Mitul",
+        	Department: "CE",
+        	fees: 15000,
+        	Sem: 3,
+          gender : "Male",
+          City : "Rajkot"
+    	},
+      {
+        	Rollno: 105,
+        	Sname: "Keshav",
+        	Department: "CE",
+        	fees: 15000,
+        	Sem: 3,
+          gender : "Male",
+          City : "Jamnagar"
+    	},
+      {
+        	Rollno: 106,
+        	Sname: "Zarna",
+        	Department: "Civil",
+        	fees: 12000,
+        	Sem: 5,
+          gender : "Female",
+          City : "Ahmedabad"
+    	},
+      {
+        	Rollno: 107,
+        	Sname: "Nima",
+        	Department: "EE",
+        	fees: 9000,
+        	Sem: 5,
+          gender : "Female",
+          City : "Rajkot"
+    	},
+      {
+        	Rollno: 108,
+        	Sname: "Dhruv",
+        	Department: "Mechanical",
+        	fees: 10000,
+        	Sem: 5,
+          gender : "Male",
+          City : "Rajkot"
+    	},
+      {
+        	Rollno: 109,
+        	Sname: "Krish",
+        	Department: "Mechanical",
+        	fees: 10000,
+        	Sem: 7,
+          gender : "Male",
+          City : "Baroda"
+    	},
+      {
+        	Rollno: 110,
+        	Sname: "Zeel",
+        	Department: "EE",
+        	fees: 9000,
+        	Sem: 3,
+          gender : "Female",
+          City : "Jamnagar"
+    	},
+      
+    	
+	])
 1. db["Student_data"].find({$and : {gender : "Female"},{city : "Rajkot"}})
 2. db["Student_data"].find({sem : {$ne : 3}}).forEach(printjson)
 3. db["Student_data"].find({city : {$in : ["Jamnagar","Baroda"]}}).forEach(printjson)
