@@ -25,7 +25,7 @@
 22. db.Student.deleteMany({age : {$lt : 25}})
 23. db.Student.deleteOne({isActive : true})
 24. db.Student.deleteMany({city : "Los Angeles"})
-25. db.Student.deleteMany({city : ""})
+25. db.Student.deleteMany({city : {$exists : false}})
 26. db.Student.updateMany({},{$rename : {city : "location"}})
 27. db.Student.updateMany({name : "John"},{$rename : {name : "fullname"}})
 28. db.Student.updateMany({},{$rename : {isActive : "status"}})
