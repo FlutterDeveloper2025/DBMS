@@ -28,5 +28,5 @@
 --25. db.employee.find({ename : {$not : {$regex : "a"}}}).forEach(printjson)
 --26. db.employee.find({ename : {$regex : /[0-9]/}}).forEach(printjson)
 --27. db.employee.find({ename : {$regex : /*[a,e,i,o,u]{1}*/}}).forEach(printjson)
---28. db.employee.find({city : {$regex : /^[A-Z]*[a-z]$/}}).forEach(printjson)
+--28. db.employee.find({city : {$regex : /^[A-Z][a-z]/}}).forEach(printjson)
 -------------------------------------------------------------------------------------
